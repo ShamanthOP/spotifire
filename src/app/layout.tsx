@@ -4,6 +4,7 @@ import { Nunito } from "next/font/google";
 import SupabaseProvider from "@/providers/SupabaseProvider";
 import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
+import ToasterProvider from "@/providers/ToastProvider";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={font.className}>
+                <ToasterProvider />
                 <SupabaseProvider>
                     <UserProvider>
                         <ModalProvider />
