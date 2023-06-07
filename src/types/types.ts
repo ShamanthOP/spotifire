@@ -1,5 +1,8 @@
 import Stripe from "stripe";
 
+/*
+ ** User types
+ */
 export interface UserDetails {
     id: string;
     first_name: string;
@@ -51,4 +54,17 @@ export interface Subscription {
     trial_start?: string;
     trial_end?: string;
     prices?: Price;
+}
+
+/*
+ ** Song types
+ */
+
+export interface Song {
+    id: string;
+    user_id: string;
+    author: string;
+    title: string;
+    song_path: string;
+    image_path: string;
 }
