@@ -11,9 +11,9 @@ interface MediaItemProps {
 const MediaItem: React.FC<MediaItemProps> = ({ song, onClick }) => {
     const imageUrl = useCoverImage(song);
 
-    if (onClick) {
-        return onClick(song.id);
-    }
+    // if (onClick) {
+    //     return onClick(song.id);
+    // }
 
     return (
         <div className="flex items-center gap-x-3 cursor-pointer hover: bg-neutral-800/50 w-full p-2 rounded-md">
