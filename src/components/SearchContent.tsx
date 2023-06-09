@@ -3,6 +3,7 @@
 import { Song } from "@/types/types";
 import React from "react";
 import MediaItem from "./MediaItem";
+import LikeButton from "./LikeButton";
 
 interface SearchContentProps {
     songs: Array<Song>;
@@ -18,7 +19,7 @@ const SearchContent: React.FC<SearchContentProps> = ({ songs }) => {
     }
 
     return (
-        <div className="flex flex-col gap-y-2 w-fill px-6">
+        <div className="flex flex-col gap-y-2 w-full px-6">
             {songs.map((song) => {
                 return (
                     <div
@@ -28,6 +29,7 @@ const SearchContent: React.FC<SearchContentProps> = ({ songs }) => {
                         <div className="flex-1">
                             <MediaItem song={song} />
                         </div>
+                        <LikeButton songId={song.id} />
                     </div>
                 );
             })}
