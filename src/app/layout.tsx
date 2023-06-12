@@ -6,6 +6,7 @@ import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToastProvider";
 import getSongsById from "@/actions/getSongsById";
+import Player from "@/components/Player";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default async function RootLayout({
                     <UserProvider>
                         <ModalProvider />
                         <SideBar songs={songs}>{children}</SideBar>
+                        <Player />
                     </UserProvider>
                 </SupabaseProvider>
             </body>
