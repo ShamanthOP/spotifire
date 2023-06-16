@@ -7,6 +7,7 @@ import ModalProvider from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToastProvider";
 import getSongsById from "@/actions/getSongsById";
 import Player from "@/components/Player";
+import getActiveProducts from "@/actions/getActiveProducts";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default async function RootLayout({
     children: React.ReactNode;
 }) {
     const songs = await getSongsById();
+    const products = await getActiveProducts();
 
     return (
         <html lang="en">
@@ -28,7 +30,7 @@ export default async function RootLayout({
                 <ToasterProvider />
                 <SupabaseProvider>
                     <UserProvider>
-                        <ModalProvider />
+                        <ModalProvider products={products} />
                         <SideBar songs={songs}>{children}</SideBar>
                         <Player />
                     </UserProvider>
