@@ -1,5 +1,5 @@
 import { Price, Product } from "@/types/types";
-import { Database } from "@/types/types_db";
+import { Database } from "@/types/types";
 import { createClient } from "@supabase/supabase-js";
 import Stripe from "stripe";
 import { stripe } from "./stripe";
