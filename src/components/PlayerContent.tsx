@@ -154,7 +154,12 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
                 </div>
             </div>
             <div className="absolute bottom-[-17px] w-[98%]">
-                <Slider value={progress} className="bg-green-500" />
+                <Slider
+                    value={progress}
+                    className="bg-green-500"
+                    defaultValue={0}
+                    max={100}
+                />
             </div>
         </>
     );

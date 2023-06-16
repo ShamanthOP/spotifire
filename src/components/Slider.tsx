@@ -7,20 +7,28 @@ import { twMerge } from "tailwind-merge";
 interface SliderProps {
     value?: number;
     className?: string;
+    defaultValue?: number;
+    max?: number;
     onChange?: (value: number) => void;
 }
 
-const Slider: React.FC<SliderProps> = ({ value = 1, className, onChange }) => {
+const Slider: React.FC<SliderProps> = ({
+    value = 1,
+    className,
+    defaultValue = 1,
+    max = 1,
+    onChange,
+}) => {
     const handleChange = (newValue: Array<number>) => {
         onChange?.(newValue[0]);
     };
 
     return (
         <RadixSlider.Root
-            defaultValue={[1]}
+            defaultValue={[defaultValue]}
             value={[value]}
             onValueChange={handleChange}
-            max={1}
+            max={max}
             step={0.1}
             aria-label="Volume"
             className="relative flex items-center select-none touch-none w-full h-10"
